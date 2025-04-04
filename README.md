@@ -10,14 +10,7 @@ It provides a web interface for health workers to input donor data and receive p
 
 ## 🧠 Architecture
 
-```mermaid
-graph TD
-    A[Frontend (ReactJS)] --> B[API (Flask / FastAPI)]
-    B --> C[Machine Learning Model]
-    C -->|Prediction| B
-    B --> A
-    D[(CSV Dataset)] --> C
-```
+<pre lang="markdown"> ```mermaid graph TD A[Frontend (ReactJS)] --> B[API (Flask/FastAPI)] B --> C[ML Model] C -->|Prediction| B B --> A D[(CSV Dataset)] --> C ``` </pre>
 
 ## 📦 Features
 
