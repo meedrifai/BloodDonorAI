@@ -1,0 +1,33 @@
+# === Python Cache Files ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# === Jupyter Notebook Checkpoints ===
+.ipynb_checkpoints/
+
+# === Virtual Environments ===
+venv/
+.env/
+.env.*  # .env.local, .env.dev etc.
+
+# === VSCode settings (optional) ===
+.vscode/
+
+# === Logs and temp files ===
+*.log
+*.tmp
+*.swp
+
+# === Compiled model files ===
+*.pkl
+*.joblib
+
+# === Project Specific ===
+data/xgboost_model.pkl
+data/scaler.pkl
+src/models/xgboost_model.cpython-*.pyc
+
+# === Ignore notebooks output cache if needed ===
+**/.ipynb_checkpoints
