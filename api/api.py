@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 # Charger le modèle et le scaler
 try:
-    model = joblib.load("data/xgboost_model.pkl")  # ou "data/best_model.pkl" si vous utilisez le meilleur modèle
+    model = joblib.load("data/xgboost_model.pkl")
     scaler = joblib.load("data/scaler.pkl")
     print("Modèle et scaler chargés avec succès!")
 except Exception as e:
