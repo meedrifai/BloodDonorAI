@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Don de Sang</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div id="chatbox" class="chatbox"></div>
+        <input type="text" id="user_input" placeholder="Posez une question..." autofocus>
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function sendMessage() {
+            let userMessage = document.getElementById("user_input").value;
+            addUserMessage(userMessage);
+            askAI(userMessage);
+        }
+
+        function addUserMessage(message) {
+            let chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += `<div class="user-message">${message}</div>`;
+            document.getElementById("user_input").value = "";
+        }
+
+        function addBotMessage(message) {
+            let chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += `<div class="bot-message">${message}</div>`;
+        }
+
+        function askAI(question) {
+            $.ajax({
+                url: "http://localhost:5000/predict",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ "question": question }),
+                success: function(data) {
+                    addBotMessage(data.reponse);
+                },
+                error: function() {
+                    addBotMessage("Désolé, il y a eu un problème.");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

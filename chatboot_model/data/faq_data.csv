@@ -1,0 +1,115 @@
+question,intent
+"Bonjour, je souhaite me renseigner sur le don de sang",DébutConversation
+"Salut, j'aimerais avoir des informations sur le don de sang",DébutConversation
+"Bonjour, c'est la première fois que je viens donner mon sang",DébutConversation
+"Bonjour, j'ai quelques questions concernant le don de sang",DébutConversation
+"Salut, je voudrais en savoir plus sur comment donner mon sang",DébutConversation
+"Bonjour, pouvez-vous m'aider à propos du don de sang ?",DébutConversation
+"Merci pour les informations, au revoir",FinConversation
+"C'est tout ce que je voulais savoir, merci beaucoup",FinConversation
+"Merci pour votre aide, bonne journée",FinConversation
+"J'ai toutes les informations dont j'avais besoin, merci",FinConversation
+"Je vous remercie pour vos réponses, à bientôt",FinConversation
+"Parfait, merci pour ces précisions, au revoir",FinConversation
+"Combien de fois par an puis-je donner du sang ?",NombreDonsAnnuels
+"Quel est le nombre maximum de dons de sang autorisés par an ?",NombreDonsAnnuels
+"À quelle fréquence puis-je donner mon sang chaque année ?",NombreDonsAnnuels
+"Combien de dons de sang sont recommandés par an ?",NombreDonsAnnuels
+"Y a-t-il une limite au nombre de dons de sang annuels ?",NombreDonsAnnuels
+"Est-ce que je peux donner mon sang tous les mois ?",NombreDonsAnnuels
+"Est-il possible de conduire après avoir donné du sang ?",ConduireApresDon
+"Puis-je prendre le volant suite à un don de sang ?",ConduireApresDon
+"Combien de temps dois-je attendre avant de conduire après un don ?",ConduireApresDon
+"Est-ce dangereux de conduire après avoir donné son sang ?",ConduireApresDon
+"Y a-t-il des restrictions pour la conduite après un don sanguin ?",ConduireApresDon
+"Est-ce que le don de sang me rendra trop faible pour conduire ?",ConduireApresDon
+"Quels sont les effets secondaires possibles après un don ?",DouleurDon
+"Est-ce que le don de sang fait mal ?",DouleurDon
+"Vais-je ressentir de la douleur pendant ou après le don ?",DouleurDon
+"Quels désagréments peut-on ressentir suite à un don de sang ?",DouleurDon
+"Le don de sang est-il douloureux ?",DouleurDon
+"Est-ce que l'aiguille utilisée pour le don fait mal ?",DouleurDon
+"Quelles sont les précautions à prendre avant un don de sang ?",PrecautionsAvantDon
+"Comment dois-je me préparer pour un don de sang ?",PrecautionsAvantDon
+"Que faut-il faire avant de se présenter pour un don ?",PrecautionsAvantDon
+"Y a-t-il des recommandations particulières avant de donner son sang ?",PrecautionsAvantDon
+"Quels conseils suivre la veille d'un don de sang ?",PrecautionsAvantDon
+"Comment préparer mon corps pour un don de sang réussi ?",PrecautionsAvantDon
+"À quelle heure le centre de don de sang ouvre-t-il ?",HorairesDon
+"Quelles sont les heures d'ouverture des centres de don ?",HorairesDon
+"Jusqu'à quelle heure peut-on donner son sang ?",HorairesDon
+"Quand puis-je me présenter pour faire un don de sang ?",HorairesDon
+"Le centre de don est-il ouvert le weekend ?",HorairesDon
+"Quels sont les horaires de collecte de sang dans ma région ?",HorairesDon
+"Puis-je manger avant de donner du sang ?",AlimentationAvantDon
+"Faut-il être à jeun pour un don de sang ?",AlimentationAvantDon
+"Que dois-je manger avant un don de sang ?",AlimentationAvantDon
+"Est-il recommandé de boire beaucoup d'eau avant un don ?",AlimentationAvantDon
+"Quels aliments éviter avant de donner son sang ?",AlimentationAvantDon
+"Comment s'alimenter la veille d'un don de sang ?",AlimentationAvantDon
+"Quand puis-je refaire un don de sang ?",FrequenceDon
+"Combien de temps dois-je attendre entre deux dons ?",FrequenceDon
+"Quel est le délai minimum entre deux dons de sang ?",FrequenceDon
+"Après combien de jours puis-je donner à nouveau mon sang ?",FrequenceDon
+"Quelle est la période d'attente obligatoire entre deux dons ?",FrequenceDon
+"À quelle fréquence peut-on donner son sang sans risque ?",FrequenceDon
+"Combien de temps dure le prélèvement sanguin ?",DureeDon
+"Quelle est la durée totale d'un don de sang ?",DureeDon
+"Combien de minutes faut-il prévoir pour un don ?",DureeDon
+"Le processus de don de sang est-il long ?",DureeDon
+"Combien de temps dois-je rester au centre pour donner mon sang ?",DureeDon
+"Quelle est la durée moyenne d'une séance de don de sang ?",DureeDon
+"Quels sont les tests effectués sur mon sang après le don ?",TestsSanguins
+"Comment mon sang est-il analysé après le don ?",TestsSanguins
+"Quelles maladies sont recherchées dans le sang donné ?",TestsSanguins
+"Est-ce que vous testez le groupe sanguin sur chaque don ?",TestsSanguins
+"Quelles analyses sont faites sur le sang des donneurs ?",TestsSanguins
+"Comment garantissez-vous la sécurité du sang collecté ?",TestsSanguins
+"Que faire si je ressens un malaise après avoir donné du sang ?",MalaiseApresDon
+"Comment réagir en cas de vertiges après un don ?",MalaiseApresDon
+"J'ai eu un étourdissement après mon don, est-ce normal ?",MalaiseApresDon
+"Quels sont les symptômes inquiétants après un don de sang ?",MalaiseApresDon
+"Je me sens faible après mon don, que dois-je faire ?",MalaiseApresDon
+"Comment éviter de s'évanouir après avoir donné son sang ?",MalaiseApresDon
+"Puis-je donner du sang si je suis enceinte ?",GrossesseAllaitementDon
+"Le don de sang est-il compatible avec l'allaitement ?",GrossesseAllaitementDon
+"Après l'accouchement, quand puis-je recommencer à donner mon sang ?",GrossesseAllaitementDon
+"Est-ce dangereux de donner son sang pendant la grossesse ?",GrossesseAllaitementDon
+"Les femmes qui allaitent peuvent-elles être donneuses ?",GrossesseAllaitementDon
+"Combien de temps après l'accouchement puis-je donner du sang ?",GrossesseAllaitementDon
+"Quels médicaments peuvent affecter mon don de sang ?",MedicamentsDon
+"Est-ce que je peux donner du sang si je prends des antibiotiques ?",MedicamentsDon
+"Les antidouleurs empêchent-ils de donner son sang ?",MedicamentsDon
+"Ma pilule contraceptive est-elle compatible avec le don de sang ?",MedicamentsDon
+"Quels traitements médicaux sont incompatibles avec le don ?",MedicamentsDon
+"Puis-je donner mon sang si je suis sous traitement chronique ?",MedicamentsDon
+"Quelles sont les conditions nécessaires pour donner du sang ?",ConditionsDon
+"Qui peut être donneur de sang ?",ConditionsDon
+"Quels sont les critères pour pouvoir donner son sang ?",ConditionsDon
+"Y a-t-il un âge minimum ou maximum pour donner du sang ?",ConditionsDon
+"Quelles sont les contre-indications au don de sang ?",ConditionsDon
+"Peut-on donner son sang avec un tatouage récent ?",ConditionsDon
+"Quelles sont les procédures avant de donner du sang ?",ProcedureDonSang
+"Comment se déroule un don de sang de A à Z ?",ProcedureDonSang
+"Quelles sont les étapes d'un don de sang complet ?",ProcedureDonSang
+"Comment se passe l'accueil lors d'un don de sang ?",ProcedureDonSang
+"Que doit-on faire lors d'une première visite pour donner son sang ?",ProcedureDonSang
+"Quel est le processus complet d'un don de sang ?",ProcedureDonSang
+"Quel type de sang est le plus souvent demandé ?",UtilisationSang
+"À quoi sert le sang collecté lors des dons ?",UtilisationSang
+"Comment mon sang sera-t-il utilisé après le don ?",UtilisationSang
+"Quels groupes sanguins sont les plus recherchés actuellement ?",UtilisationSang
+"Qui bénéficie des dons de sang ?",UtilisationSang
+"Pourquoi les hôpitaux ont-ils besoin de tant de sang ?",UtilisationSang
+"Quand est-ce que je peux prendre rendez-vous pour donner mon sang ?",RendezVousDon
+"Comment réserver un créneau pour un don de sang ?",RendezVousDon
+"Faut-il obligatoirement prendre rendez-vous pour donner son sang ?",RendezVousDon
+"Où puis-je m'inscrire pour faire un don de sang ?",RendezVousDon
+"Comment organiser mon prochain don de sang ?",RendezVousDon
+"Peut-on se présenter sans rendez-vous pour donner son sang ?",RendezVousDon
+"Est-ce que je peux faire du sport après avoir donné du sang ?",SportApresDon
+"Combien de temps dois-je attendre avant de reprendre une activité physique ?",SportApresDon
+"Le don de sang affecte-t-il mes performances sportives ?",SportApresDon
+"Puis-je aller à la salle de sport le jour d'un don de sang ?",SportApresDon
+"Est-il dangereux de faire de l'exercice après avoir donné son sang ?",SportApresDon
+"Quand puis-je reprendre la course à pied après un don ?",SportApresDon
