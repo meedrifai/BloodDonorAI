@@ -1,9 +1,10 @@
-from flask import Flask, request, jsonify
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 import pickle
-from flask_cors import CORS  # Pour autoriser les requêtes du frontend React
 
-# Charger le pipeline (vectorizer + modèle)
-with open("app/model.pkl", "rb") as f:
+# Charger le pipeline
+with open("model.pkl", "rb") as f:
     model = pickle.load(f)
 
 intent_responses = {
@@ -46,25 +47,28 @@ intent_responses = {
     "SportApresDon": "Il est déconseillé de pratiquer une activité physique intense dans les 24 heures suivant un don de sang. Évitez particulièrement la natation, le vélo, la course à pied intensive ou la musculation lourde. Ces précautions permettent à votre organisme de récupérer et d'éviter les vertiges ou malaises liés à la baisse temporaire du volume sanguin."
 }
 
-app = Flask(__name__)
-CORS(app)  # Active le CORS
+# Définir l'app FastAPI
+app = FastAPI()
 
+# Autoriser CORS (équivalent à CORS(app) dans Flask)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # À restreindre en prod !
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.route("/predict", methods=["POST"])
-def predict():
-    data = request.json
-    question = data.get("message")
+# Modèle d'entrée
+class MessageInput(BaseModel):
+    message: str
 
-    if not question:
-        return jsonify({"error": "Veuillez fournir une question."}), 400
-
+@app.post("/predict")
+async def predict(data: MessageInput):
+    question = data.message
     intent = model.predict([question])[0]
     response = intent_responses.get(intent, "Je n'ai pas compris, réessayez.")
-
-    return jsonify({
+    return {
         "intent": intent,
         "response": response
-    })
-
-if __name__ == "__main__":
-    app.run(debug=True)
+    }

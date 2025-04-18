@@ -79,7 +79,7 @@ const Chatbot = () => {
     
     try {
       // Requête POST vers Flask
-      const response = await axios.post("http://localhost:5000/predict", {
+      const response = await axios.post("http://localhost:8000/predict", {
         message: message,
       });
       
