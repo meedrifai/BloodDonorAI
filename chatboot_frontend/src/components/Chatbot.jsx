@@ -25,7 +25,7 @@ const Chatbot = () => {
   useEffect(() => {
     setTimeout(() => {
       setResponses([
-        { bot: "Bonjour ! Je suis votre assistant virtuel pour le don de sang. Comment puis-je vous aider aujourd'hui ?", isNew: true }
+        { bot: "Hello! I am your virtual assistant for blood donation. How can I help you today?", isNew: true }
       ]);
       setTimeout(() => {
         setResponses(prev => 
@@ -87,7 +87,7 @@ const Chatbot = () => {
       const botReply2 = response.data.response;
       
       // Si l'intent est RendezVousDon, activer le sélecteur d'hôpital
-      if (botReply === "RendezVousDon") {
+      if (botReply === "DonationLocation") {
         setLoading(false);
         setIsHospitalSelectorActive(true);
       } else {
@@ -97,7 +97,7 @@ const Chatbot = () => {
     } catch (error) {
       console.error("Erreur lors de l'appel API :", error);
       setLoading(false);
-      simulateTyping("Je n'ai pas compris, pourriez-vous reformuler votre question ?", newMessages);
+      simulateTyping("I didn't understand, could you rephrase your question?", newMessages);
     }
   };
 
@@ -171,7 +171,7 @@ const Chatbot = () => {
       
       {isHospitalSelectorActive ? (
         <HospitalSelector data={regionsData} onFinish={(hospitals) => {
-          simulateTyping(`Voici les hôpitaux disponibles pour votre don de sang : ${hospitals.join(", ")}`, responses);
+          simulateTyping(`Here are the hospitals available for your blood donation: ${hospitals.join(", ")}`, responses);
           setIsHospitalSelectorActive(false);
         }} />
       ) : (
@@ -181,7 +181,7 @@ const Chatbot = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Posez une question sur le don de sang..."
+            placeholder="Ask a question about donating blood..."
             disabled={loading || isTyping}
           />
           <button 

@@ -74,24 +74,24 @@ const HospitalSelector = ({ data, onFinish }) => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto">
-      <h2 className="text-xl font-semibold mb-6 text-center text-gray-800">Recherche d'hôpitaux</h2>
+      <h2 className="text-xl font-semibold mb-6 text-center text-gray-800">Hospital search</h2>
       
       <div className="space-y-4">
         <SelectField
           icon={<MapPin size={16} className="text-gray-500" />}
-          label="Région"
+          label="Region"
           value={selectedRegion}
           onChange={handleRegionChange}
-          placeholder="Sélectionnez une région"
+          placeholder="Select a region"
           options={data.map(region => ({ value: region.region, label: region.region }))}
         />
 
         <SelectField
           icon={<MapPin size={16} className="text-gray-500" />}
-          label="Délégation"
+          label="Delegation"
           value={selectedDelegation}
           onChange={handleDelegationChange}
-          placeholder="Sélectionnez une délégation"
+          placeholder="Select a delegatioon"
           options={availableDelegations.map(delegation => ({ 
             value: delegation.delegation, 
             label: delegation.delegation 
@@ -101,10 +101,10 @@ const HospitalSelector = ({ data, onFinish }) => {
 
         <SelectField
           icon={<Building size={16} className="text-gray-500" />}
-          label="Commune"
+          label="Municipality"
           value={selectedCommune}
           onChange={handleCommuneChange}
-          placeholder="Sélectionnez une commune"
+          placeholder="Select a municipality"
           options={availableCommunes.map(commune => ({ 
             value: commune.commune, 
             label: commune.commune 
@@ -117,7 +117,7 @@ const HospitalSelector = ({ data, onFinish }) => {
         <div className="mt-6">
           <h3 className="flex items-center text-md font-medium text-gray-800 mb-3">
             <Hospital size={18} className="mr-2 text-blue-600" />
-            Hôpitaux disponibles
+            Available hospitals 
           </h3>
           
           {hospitals.length > 0 ? (
@@ -131,7 +131,7 @@ const HospitalSelector = ({ data, onFinish }) => {
             </ul>
           ) : (
             <div className="text-center p-4 bg-gray-50 rounded-md text-gray-500">
-              Aucun hôpital trouvé dans cette commune.
+              No hospital found in this municipality.
             </div>
           )}
         </div>

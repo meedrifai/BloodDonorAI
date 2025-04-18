@@ -8,45 +8,44 @@ with open("model.pkl", "rb") as f:
     model = pickle.load(f)
 
 intent_responses = {
-    "DébutConversation":"Bienvenue ! Je suis là pour répondre à toutes vos questions concernant le don de sang. N'hésitez pas à me demander ce qui vous intéresse.",
+    "StartConversation": "Welcome! I'm here to answer all your questions about blood donation. Feel free to ask me whatever you're interested in.",
     
-    "FinConversation":"Merci d'avoir discuté avec moi aujourd'hui. N'hésitez pas à revenir si vous avez d'autres questions sur le don de sang. Bonne journée !",
+    "EndConversation": "Thank you for chatting with me today. Please feel free to come back if you have any other questions about blood donation. Have a great day!",
     
-    "DouleurDon": "Le don de sang provoque généralement une légère piqûre, mais il ne fait pas vraiment mal. La plupart des donneurs ressentent seulement un inconfort momentané lors de l'insertion de l'aiguille. Après le don, certaines personnes peuvent avoir un léger bleu ou une sensibilité au site de ponction.",
+    "DonationPain": "Blood donation generally causes a slight pinch, but it doesn't really hurt. Most donors only feel momentary discomfort when the needle is inserted. After donation, some people may experience a slight bruise or tenderness at the puncture site.",
     
-    "NombreDonsAnnuels": "Vous pouvez donner votre sang jusqu'à 4 fois par an pour les hommes et 3 fois pour les femmes. Cette différence s'explique par les réserves en fer, naturellement plus importantes chez les hommes.",
+    "AnnualDonationFrequency": "You can donate blood up to 4 times a year for men and 3 times for women. This difference is due to iron reserves, which are naturally higher in men.",
     
-    "ConditionsDon": "Vous devez être en bonne santé, âgé de 18 à 65 ans et peser au moins 50 kg. Certaines situations peuvent entraîner un report temporaire du don : tatouage récent (4 mois), voyage dans certains pays, intervention chirurgicale, grossesse, etc. Un entretien médical préalable déterminera votre aptitude au don.",
+    "DonationRequirements": "You must be in good health, aged between 18 and 65, and weigh at least 110 pounds (50 kg). Some situations may require a temporary deferral: recent tattoo (4 months), travel to certain countries, surgical procedures, pregnancy, etc. A medical interview beforehand will determine your eligibility to donate.",
     
-    "ConduireApresDon": "Oui, vous pouvez conduire après avoir donné du sang, mais il est recommandé de se reposer au moins 15 minutes après le don et de s'hydrater correctement. Si vous vous sentez faible ou étourdi, attendez que ces sensations disparaissent avant de prendre le volant.",
+    "DrivingAfterDonation": "Yes, you can drive after donating blood, but it's recommended to rest for at least 15 minutes after donation and to hydrate properly. If you feel weak or dizzy, wait until these sensations disappear before getting behind the wheel.",
     
-    "PrecautionsAvantDon": "Avant de donner votre sang, assurez-vous d'être bien hydraté, d'avoir mangé normalement et d'être bien reposé. Évitez l'alcool dans les 24 heures précédant le don. Portez des vêtements confortables avec des manches faciles à relever. N'oubliez pas de vous munir d'une pièce d'identité.",
+    "PrecautionsBeforeDonation": "Before donating blood, make sure you're well-hydrated, have eaten normally, and are well-rested. Avoid alcohol in the 24 hours preceding donation. Wear comfortable clothing with sleeves that are easy to roll up. Don't forget to bring identification.",
     
-    "HorairesDon": "Les centres de don du sang sont généralement ouverts du lundi au vendredi de 8h à 19h et le samedi de 8h à 13h. Certains centres peuvent avoir des horaires élargis. Nous vous recommandons de vérifier les horaires exacts du centre près de chez vous sur notre site web ou en appelant directement le centre.",
+    "DonationHours": "Blood donation centers are generally open Monday to Friday from 8am to 7pm and Saturday from 8am to 1pm. Some centers may have extended hours. We recommend checking the exact hours of the center near you on our website or by calling the center directly.",
     
-    "AlimentationAvantDon": "Il est fortement recommandé de manger avant un don de sang. Ne venez pas à jeun, cela pourrait provoquer un malaise. Prenez un repas léger et hydratez-vous bien (eau, jus de fruits) dans les heures précédant votre don. Évitez les aliments trop gras et l'alcool.",
+    "EatingBeforeDonation": "It's strongly recommended to eat before donating blood. Don't come on an empty stomach, as this could cause dizziness. Have a light meal and hydrate well (water, fruit juice) in the hours preceding your donation. Avoid overly fatty foods and alcohol.",
     
-    "FrequenceDon": "Pour un don de sang total, il faut respecter un délai minimum de 8 semaines (56 jours) entre chaque don. Pour le don de plasma, l'intervalle est de 2 semaines, et pour le don de plaquettes, 4 semaines. Ces délais permettent à votre organisme de reconstituer ses réserves.",
+    "DonationFrequency": "For whole blood donation, you must respect a minimum delay of 8 weeks (56 days) between each donation. For plasma donation, the interval is 2 weeks, and for platelet donation, 4 weeks. These intervals allow your body to replenish its reserves.",
     
-    "DureeDon": "Le prélèvement sanguin lui-même dure environ 10 minutes. Cependant, le processus complet (accueil, questionnaire, entretien médical, prélèvement et repos) prend environ 45 minutes à 1 heure lors d'une première visite, et environ 30 minutes pour les donneurs réguliers.",
+    "DonationDuration": "The blood extraction itself takes about 10 minutes. However, the complete process (reception, questionnaire, medical interview, extraction, and rest) takes about 45 minutes to 1 hour for a first visit, and about 30 minutes for regular donors.",
     
-    "TestsSanguins": "Après chaque don, votre sang est systématiquement analysé pour déterminer votre groupe sanguin et rhésus, ainsi que pour détecter d'éventuelles maladies infectieuses comme l'hépatite B et C, le VIH, la syphilis et d'autres virus. Ces tests garantissent la sécurité du receveur.",
+    "BloodTests": "After each donation, your blood is systematically analyzed to determine your blood type and Rhesus factor, as well as to detect possible infectious diseases such as Hepatitis B and C, HIV, syphilis, and other viruses. These tests ensure the safety of the recipient.",
     
-    "MalaiseApresDon": "Si vous ressentez un malaise après avoir donné du sang, allongez-vous immédiatement avec les jambes surélevées. Signalez-le au personnel médical présent. Hydratez-vous et mangez quelque chose de sucré. Ne quittez pas le centre avant de vous sentir complètement rétabli. En cas de malaise une fois rentré chez vous, contactez le centre de don.",
+    "DizzinessAfterDonation": "If you feel unwell after donating blood, lie down immediately with your legs elevated. Alert the medical staff present. Hydrate yourself and eat something sweet. Don't leave the center until you feel completely recovered. If you feel dizzy once you're home, contact the donation center.",
     
-    "GrossesseAllaitementDon": "Le don de sang est contre-indiqué pendant la grossesse et pendant les 6 mois suivant l'accouchement. Pour les femmes qui allaitent, il est recommandé d'attendre la fin de l'allaitement avant de donner son sang. Ces précautions visent à protéger la santé de la mère et de l'enfant.",
+    "PregnancyBreastfeedingDonation": "Blood donation is contraindicated during pregnancy and for 6 months after childbirth. For women who are breastfeeding, it's recommended to wait until the end of breastfeeding before donating blood. These precautions aim to protect the health of the mother and child.",
     
-    "MedicamentsDon": "Certains médicaments peuvent temporairement empêcher le don de sang, notamment les antibiotiques récents, les anticoagulants, certains traitements dermatologiques comme l'isotrétinoïne, ou des médicaments pour la prostate. Les contraceptifs, les traitements pour l'hypertension stabilisée ou les antidépresseurs sont généralement compatibles avec le don.",
+    "MedicationsDonation": "Some medications can temporarily prevent blood donation, including recent antibiotics, anticoagulants, certain dermatological treatments like isotretinoin, or prostate medications. Contraceptives, treatments for stabilized hypertension, or antidepressants are generally compatible with donation.",
     
-    "ProcedureDonSang": "Le processus de don comprend : l'accueil et l'enregistrement, le remplissage d'un questionnaire de santé, un entretien médical confidentiel, le prélèvement de sang (environ 470 ml), et une collation obligatoire de 15-20 minutes. L'ensemble de la procédure dure environ 45 minutes pour un premier don.",
+    "BloodDonationProcedure": "The donation process includes: reception and registration, filling out a health questionnaire, a confidential medical interview, blood collection (about 470 ml), and a mandatory snack break for 15-20 minutes. The entire procedure takes about 45 minutes for a first donation.",
     
-    "UtilisationSang": "Le sang collecté est utilisé pour des transfusions lors d'hémorragies (accidents, chirurgies, accouchements), pour traiter des maladies comme les cancers ou l'anémie, et pour fabriquer des médicaments dérivés du sang. Tous les groupes sanguins sont nécessaires, mais les groupes O négatif (donneur universel) et A positif sont particulièrement demandés.",
+    "BloodUsage": "The collected blood is used for transfusions during hemorrhages (accidents, surgeries, childbirths), to treat diseases like cancer or anemia, and to manufacture blood-derived medications. All blood types are needed, but O negative (universal donor) and A positive groups are particularly in demand.",
     
-    "RendezVousDon": "Vous pouvez prendre rendez-vous pour un don de sang en ligne sur notre site web, via notre application mobile, par téléphone, ou directement au centre de don. Bien que le rendez-vous soit recommandé pour réduire votre temps d'attente, de nombreux centres acceptent également les donneurs sans rendez-vous.",
+    "DonationLocation": "You can make an appointment for blood donation online on our website, via our mobile app, by phone, or directly at the donation center. Although appointments are recommended to reduce your waiting time, many centers also accept donors without appointments.",
     
-    "SportApresDon": "Il est déconseillé de pratiquer une activité physique intense dans les 24 heures suivant un don de sang. Évitez particulièrement la natation, le vélo, la course à pied intensive ou la musculation lourde. Ces précautions permettent à votre organisme de récupérer et d'éviter les vertiges ou malaises liés à la baisse temporaire du volume sanguin."
+    "ExerciseAfterDonation": "It's advised against practicing intense physical activity within 24 hours following a blood donation. Particularly avoid swimming, cycling, intensive running, or heavy weightlifting. These precautions allow your body to recover and avoid dizziness or discomfort related to the temporary decrease in blood volume."
 }
-
 # Définir l'app FastAPI
 app = FastAPI()
 
